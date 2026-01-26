@@ -27,14 +27,6 @@
             background-repeat: no-repeat;
             background-size: 1.2em 1.2em;
         }
-        .coming-soon-badge {
-            font-size: 10px;
-            background: #fee2e2;
-            color: #ef4444;
-            padding: 2px 6px;
-            border-radius: 4px;
-            margin-left: 5px;
-        }
     </style>
 </head>
 <body class="text-slate-900 hero-mesh min-h-screen flex flex-col">
@@ -50,7 +42,7 @@
                     <span class="text-xl font-bold text-slate-800 tracking-tight">MediLink<span class="text-teal-600">Kerala</span></span>
                 </div>
                 <div class="hidden md:flex space-x-8 font-medium text-slate-600">
-                    <a href="#" class="text-teal-600 font-bold border-b-2 border-teal-600">Find Hospital</a>
+                    <a href="#" class="hover:text-teal-600 transition">Find Hospital</a>
                     <a href="#" class="hover:text-teal-600 transition">Emergency</a>
                     <a href="#" class="hover:text-teal-600 transition">Contact</a>
                 </div>
@@ -68,7 +60,7 @@
                 Healthcare Excellence in <br><span class="text-teal-600">Kerala</span>
             </h1>
             <p class="text-lg text-slate-600 mb-12 max-w-2xl mx-auto">
-                Select your district to find the best multi-specialty hospitals near you.
+                Instantly find hospitals and specialists across God's Own Country.
             </p>
 
             <!-- Main Search Console -->
@@ -78,12 +70,11 @@
                     <select id="districtSelect" onchange="updateCities()" class="w-full bg-white border border-slate-200 rounded-2xl py-4 px-5 focus:ring-2 focus:ring-teal-500 outline-none transition-all font-medium">
                         <option value="">Choose District</option>
                         <option value="kasaragod">Kasaragod (Live)</option>
-                        <option value="kannur">Kannur (Soon)</option>
-                        <option value="kozhikode">Kozhikode (Soon)</option>
-                        <option value="malappuram">Malappuram (Soon)</option>
-                        <option value="thrissur">Thrissur (Soon)</option>
-                        <option value="ernakulam">Ernakulam (Soon)</option>
-                        <option value="thiruvananthapuram">Trivandrum (Soon)</option>
+                        <option value="kannur">Kannur</option>
+                        <option value="kozhikode">Kozhikode</option>
+                        <option value="malappuram">Malappuram</option>
+                        <option value="ernakulam">Ernakulam</option>
+                        <option value="thiruvananthapuram">Thiruvananthapuram</option>
                     </select>
                 </div>
 
@@ -99,12 +90,78 @@
                     <select id="deptSelect" class="w-full bg-white border border-slate-200 rounded-2xl py-4 px-5 focus:ring-2 focus:ring-teal-500 outline-none transition-all font-medium">
                         <option value="">All Specialists</option>
                         <option value="cardiology">Cardiology</option>
+                        <option value="neurology">Neurology</option>
                         <option value="orthopedics">Orthopedics</option>
-                        <option value="pediatrics">Pediatrics</option>
-                        <option value="gynecology">Gynecology</option>
-                        <option value="general-medicine">General Medicine</option>
                     </select>
                 </div>
+
+                <div class="flex items-end">
+                    <button onclick="searchHospitals()" class="w-full bg-slate-900 hover:bg-teal-700 text-white font-bold py-4 rounded-2xl shadow-xl transition-all flex items-center justify-center gap-2 mb-[1px]">
+                        <i class="fas fa-search"></i> Find Hospital
+                    </button>
+                </div>
+            </div>
+
+            <!-- Blood Bank Button -->
+            <div class="mt-12">
+                <button class="inline-flex items-center gap-3 bg-white border-2 border-rose-100 text-rose-600 px-8 py-4 rounded-full font-bold hover:bg-rose-50 transition-all shadow-lg group">
+                    <i class="fas fa-tint group-hover:scale-110 transition-transform"></i>
+                    Need Emergency Blood? Open Directory
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <p class="text-slate-500 text-sm">© 2026 MediLink Kerala Directory. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const districtCities = {
+            kasaragod: ["Kasaragod", "Kanhangad", "Uppala", "Nileshwaram"]
+        };
+
+        function updateCities() {
+            const district = document.getElementById('districtSelect').value;
+            const citySelect = document.getElementById('citySelect');
+            citySelect.innerHTML = '<option value="">All Cities</option>';
+            if (district === 'kasaragod') {
+                districtCities.kasaragod.forEach(city => {
+                    const opt = document.createElement('option');
+                    opt.value = city.toLowerCase();
+                    opt.textContent = city;
+                    citySelect.appendChild(opt);
+                });
+            } else {
+                citySelect.innerHTML = '<option value="">Soon...</option>';
+            }
+        }
+
+        function searchHospitals() {
+            const district = document.getElementById('districtSelect').value;
+            const city = document.getElementById('citySelect').value;
+            const dept = document.getElementById('deptSelect').value;
+            
+            if (!district) return;
+
+            if (district === 'kasaragod') {
+                // CORRECTED PATH to match: Hospital -> Kasaragod (folder) -> kasaragod.html (file)
+                let url = `Hospital/Kasaragod/kasaragod.html`;
+                let params = [];
+                if (city) params.push(`city=${city}`);
+                if (dept) params.push(`dept=${dept}`);
+                if (params.length > 0) url += `?${params.join('&')}`;
+                window.location.href = url;
+            } else {
+                alert("Data for this district is coming soon!");
+            }
+        }
+    </script>
+</body>
+</html>
 
                 <div class="flex items-end">
                     <button onclick="searchHospitals()" class="w-full bg-slate-900 hover:bg-teal-700 text-white font-bold py-4 rounded-2xl shadow-xl transition-all flex items-center justify-center gap-2 mb-[1px]">
