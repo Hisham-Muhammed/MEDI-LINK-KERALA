@@ -3,108 +3,311 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carewell Hospital & Research Centre | Details</title>
+    <title>Carewell Hospital & Research Centre | Kasaragod</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap');
-        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #f8fafc; color: #1e293b; }
-        .hero-gradient { background: linear-gradient(to top, #0f172a 0%, rgba(15, 23, 42, 0.2) 60%, transparent 100%); }
-        .dept-card { background: white; border: 1px solid #f1f5f9; transition: all 0.3s ease; }
-        .dept-card:hover { border-color: #0ea5e9; transform: translateY(-2px); }
-        .call-btn { background: linear-gradient(135deg, #0ea5e9 0%, #2563eb 100%); }
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #f8fafc; }
+        
+        .nav-glass {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+        }
+        
+        .doctor-card {
+            transition: all 0.3s ease;
+            border: 1px solid #f1f5f9;
+        }
+        .doctor-card:hover {
+            transform: translateY(-5px);
+            border-color: #2dd4bf;
+            box-shadow: 0 12px 20px -5px rgba(0, 0, 0, 0.05);
+        }
+
+        .img-gradient {
+            background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.9) 100%);
+        }
+        
+        .emergency-glow {
+            animation: glow 2s infinite;
+        }
+        @keyframes glow {
+            0%, 100% { box-shadow: 0 0 5px rgba(244, 63, 94, 0.4); }
+            50% { box-shadow: 0 0 20px rgba(244, 63, 94, 0.8); }
+        }
     </style>
 </head>
-<body class="pb-28">
+<body class="text-slate-900">
 
-    <!-- Hero Header -->
-    <div class="relative h-80 w-full overflow-hidden">
-        <img src="https://images.unsplash.com/photo-1586773860418-d3b97978c65c?q=80&w=1200" class="w-full h-full object-cover" alt="Carewell Research Center">
-        <div class="absolute inset-0 hero-gradient"></div>
-        <button onclick="window.history.back()" class="absolute top-6 left-4 bg-white/20 backdrop-blur-md p-3 rounded-full text-white z-20">
-            <i class="fas fa-arrow-left"></i>
-        </button>
-        <div class="absolute bottom-8 left-6 right-6 z-10">
-            <div class="flex items-center gap-2 mb-3">
-                <span class="bg-sky-500 text-white text-[9px] font-black px-2 py-1 rounded shadow-lg uppercase tracking-widest">30+ Years Excellence</span>
-                <span class="bg-emerald-500 text-white text-[9px] font-black px-2 py-1 rounded shadow-lg uppercase tracking-widest">Trauma Center</span>
+    <!-- PREMIUM MENU -->
+    <nav class="sticky top-0 z-[100] nav-glass">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex items-center gap-3">
+                    <a href="kasaragod.html" class="w-9 h-9 flex items-center justify-center rounded-xl bg-slate-100 text-slate-600 hover:bg-teal-600 hover:text-white transition-all">
+                        <i class="fas fa-chevron-left"></i>
+                    </a>
+                    <div class="flex items-center gap-2">
+                        <div class="bg-teal-600 p-1.5 rounded-lg">
+                            <i class="fas fa-hospital-symbol text-white text-sm"></i>
+                        </div>
+                        <span class="text-lg font-bold tracking-tight text-slate-800">MediLink<span class="text-teal-600">Kerala</span></span>
+                    </div>
+                </div>
+
+                <div class="hidden md:flex items-center gap-8 text-sm font-bold text-slate-600">
+                    <a href="../../index.html" class="hover:text-teal-600 transition">Home</a>
+                    <a href="#departments" class="hover:text-teal-600 transition">Specialties</a>
+                    <a href="#doctors" class="hover:text-teal-600 transition">Doctors</a>
+                </div>
+
+                <div class="flex items-center gap-3">
+                    <a href="tel:04994222324" class="emergency-glow bg-rose-500 text-white px-5 py-2.5 rounded-full text-xs font-black flex items-center gap-2">
+                        <i class="fas fa-phone-alt animate-pulse"></i> 24/7 CASUALTY
+                    </a>
+                </div>
             </div>
-            <h1 class="text-white text-3xl font-extrabold leading-tight">Carewell Hospital & Research Centre</h1>
-            <p class="text-sky-200 text-sm mt-1 font-medium"><i class="fas fa-map-marker-alt mr-2 text-rose-400"></i>Nullipady, Kasaragod, Kerala</p>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <header class="relative w-full h-[400px] bg-slate-200 overflow-hidden">
+        <img src="https://i.ibb.co/twwd3bL4/x.jpg" alt="Carewell Hospital" class="w-full h-full object-cover">
+        <div class="absolute inset-0 img-gradient flex flex-col justify-end p-6 md:p-12">
+            <div class="max-w-5xl mx-auto w-full">
+                <div class="flex gap-2 mb-4">
+                    <span class="bg-teal-500 text-white text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-widest">30+ Years of Service</span>
+                    <span class="bg-white/20 backdrop-blur-md text-white text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-widest">Multispeciality</span>
+                </div>
+                <h1 class="text-3xl md:text-5xl font-black text-white mb-2 tracking-tight">Carewell Hospital & Research Centre</h1>
+                <div class="flex flex-wrap items-center gap-4 text-white/90 text-sm font-medium">
+                    <span class="flex items-center gap-2"><i class="fas fa-map-marker-alt text-teal-400"></i> NH-66, Nullipady, Kasaragod</span>
+                    <span id="dist-display" class="bg-white text-teal-700 px-3 py-1 rounded-lg flex items-center gap-2 font-bold text-xs shadow-xl">
+                        <i class="fas fa-location-arrow"></i> Calculating distance...
+                    </span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- QUICK ACTIONS -->
+    <div class="bg-white border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 py-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="flex items-center gap-4 p-4 rounded-3xl bg-slate-50 border border-slate-100">
+                <div class="w-12 h-12 bg-teal-100 rounded-2xl flex items-center justify-center text-teal-600"><i class="fas fa-ambulance"></i></div>
+                <div>
+                    <p class="text-[10px] font-bold text-slate-400 uppercase">Emergency Line</p>
+                    <p class="font-bold text-slate-800">8848 642 654</p>
+                </div>
+            </div>
+            <div class="flex items-center gap-4 p-4 rounded-3xl bg-slate-50 border border-slate-100">
+                <div class="w-12 h-12 bg-sky-100 rounded-2xl flex items-center justify-center text-sky-600"><i class="fas fa-calendar-alt"></i></div>
+                <div>
+                    <p class="text-[10px] font-bold text-slate-400 uppercase">Appointments</p>
+                    <p class="font-bold text-slate-800">04994 222 324</p>
+                </div>
+            </div>
+            <div class="flex items-center gap-4 p-4 rounded-3xl bg-slate-50 border border-slate-100">
+                <div class="w-12 h-12 bg-purple-100 rounded-2xl flex items-center justify-center text-purple-600"><i class="fas fa-notes-medical"></i></div>
+                <div>
+                    <p class="text-[10px] font-bold text-slate-400 uppercase">Email Support</p>
+                    <p class="font-bold text-slate-800 text-sm">carewellhospital@gmail.com</p>
+                </div>
+            </div>
         </div>
     </div>
 
-    <main class="max-w-3xl mx-auto px-5 -mt-6 relative z-20">
-        
-        <!-- Contact Quick Actions -->
-        <div class="bg-white rounded-3xl p-6 shadow-xl shadow-slate-200/60 mb-8 border border-slate-50">
-            <div class="grid grid-cols-1 gap-3">
-                <a href="tel:+914994222324" class="call-btn w-full py-4 rounded-2xl flex items-center justify-center gap-3 text-white font-bold shadow-lg shadow-blue-200">
-                    <i class="fas fa-phone-alt animate-pulse"></i> Call for Appointment
-                </a>
-                <div class="flex gap-2">
-                    <a href="https://www.google.com/maps/dir/?api=1&destination=Carewell+Hospital+Nullipady+Kasaragod" class="flex-1 bg-slate-50 border border-slate-100 p-3 rounded-xl text-center text-xs font-bold text-slate-600">
-                        <i class="fas fa-location-arrow mr-1 text-sky-600"></i> Navigate
-                    </a>
-                    <a href="http://www.thecarewellhospital.com/" class="flex-1 bg-slate-50 border border-slate-100 p-3 rounded-xl text-center text-xs font-bold text-slate-600">
-                        <i class="fas fa-globe mr-1 text-sky-600"></i> Website
-                    </a>
+    <!-- CONTENT -->
+    <main class="max-w-7xl mx-auto px-4 py-12">
+        <div class="flex flex-col lg:flex-row gap-12">
+            
+            <div class="lg:w-2/3">
+                <!-- DOCTORS -->
+                <section id="doctors" class="mb-16">
+                    <h2 class="text-2xl font-black text-slate-900 mb-8 flex items-center gap-3">
+                        <span class="w-2 h-8 bg-teal-500 rounded-full"></span>
+                        Medical Leadership & Specialists
+                    </h2>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <!-- Dr. Zuhara -->
+                        <div class="doctor-card bg-white p-6 rounded-[2.5rem]">
+                            <div class="flex justify-between items-start mb-4">
+                                <div class="w-14 h-14 bg-teal-50 rounded-2xl flex items-center justify-center text-teal-600 font-black">ZB</div>
+                                <span class="bg-teal-100 text-teal-700 text-[10px] font-black px-3 py-1 rounded-full">CHAIRMAN</span>
+                            </div>
+                            <h4 class="text-lg font-bold text-slate-800">Dr. Zuhara Beefathima Hameed</h4>
+                            <p class="text-xs text-slate-500 font-bold uppercase mb-4 tracking-tighter">Obstetrics & Gynaecology</p>
+                        </div>
+
+                        <!-- Dr. Afsal -->
+                        <div class="doctor-card bg-white p-6 rounded-[2.5rem]">
+                            <div class="flex justify-between items-start mb-4">
+                                <div class="w-14 h-14 bg-sky-50 rounded-2xl flex items-center justify-center text-sky-600 font-black">MA</div>
+                                <span class="bg-sky-100 text-sky-700 text-[10px] font-black px-3 py-1 rounded-full">MANAGING DIRECTOR</span>
+                            </div>
+                            <h4 class="text-lg font-bold text-slate-800">Dr. M A Mohammed Afsal</h4>
+                            <p class="text-xs text-slate-500 font-bold uppercase mb-4 tracking-tighter">General Surgeon</p>
+                        </div>
+
+                        <!-- Specialists List -->
+                        <div class="col-span-1 md:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
+                            <div class="bg-white border border-slate-100 p-4 rounded-2xl">
+                                <p class="text-[10px] font-black text-teal-600 uppercase mb-1">General Medicine</p>
+                                <p class="font-bold text-slate-800">Dr. Jayadev Kangila</p>
+                            </div>
+                            <div class="bg-white border border-slate-100 p-4 rounded-2xl">
+                                <p class="text-[10px] font-black text-teal-600 uppercase mb-1">Orthopedics</p>
+                                <p class="font-bold text-slate-800">Dr. Nagaraj Bhat</p>
+                            </div>
+                            <div class="bg-white border border-slate-100 p-4 rounded-2xl">
+                                <p class="text-[10px] font-black text-teal-600 uppercase mb-1">Neurology</p>
+                                <p class="font-bold text-slate-800">Dr. Mohammed Shameem K.</p>
+                            </div>
+                            <div class="bg-white border border-slate-100 p-4 rounded-2xl">
+                                <p class="text-[10px] font-black text-teal-600 uppercase mb-1">Pediatrics</p>
+                                <p class="font-bold text-slate-800">Dr. Mohammed Musthafa</p>
+                            </div>
+                            <div class="bg-white border border-slate-100 p-4 rounded-2xl">
+                                <p class="text-[10px] font-black text-teal-600 uppercase mb-1">Nephrology</p>
+                                <p class="font-bold text-slate-800">Dr. Abhaya Narayanan</p>
+                            </div>
+                            <div class="bg-white border border-slate-100 p-4 rounded-2xl">
+                                <p class="text-[10px] font-black text-teal-600 uppercase mb-1">ENT Surgeon</p>
+                                <p class="font-bold text-slate-800">Dr. Adarsh Herale</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- DEPARTMENTS -->
+                <section id="departments" class="mb-16">
+                    <h2 class="text-xl font-black text-slate-900 mb-6">Departments & Services</h2>
+                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                        <div class="bg-white p-4 rounded-2xl text-center border border-slate-100 shadow-sm">
+                            <i class="fas fa-kidneys text-teal-500 mb-2 block"></i>
+                            <p class="text-xs font-bold text-slate-700">Dialysis Unit</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-2xl text-center border border-slate-100 shadow-sm">
+                            <i class="fas fa-eye text-teal-500 mb-2 block"></i>
+                            <p class="text-xs font-bold text-slate-700">Ophthalmology</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-2xl text-center border border-slate-100 shadow-sm">
+                            <i class="fas fa-brain text-teal-500 mb-2 block"></i>
+                            <p class="text-xs font-bold text-slate-700">Neurology</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-2xl text-center border border-slate-100 shadow-sm">
+                            <i class="fas fa-tooth text-teal-500 mb-2 block"></i>
+                            <p class="text-xs font-bold text-slate-700">Dentistry</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-2xl text-center border border-slate-100 shadow-sm">
+                            <i class="fas fa-stomach text-teal-500 mb-2 block"></i>
+                            <p class="text-xs font-bold text-slate-700">Gastroenterology</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-2xl text-center border border-slate-100 shadow-sm">
+                            <i class="fas fa-microscope text-teal-500 mb-2 block"></i>
+                            <p class="text-xs font-bold text-slate-700">Radiology</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- SIDEBAR -->
+            <div class="lg:w-1/3">
+                <div class="sticky top-24 space-y-6">
+                    <!-- Location -->
+                    <div class="bg-slate-900 text-white p-8 rounded-[2.5rem] shadow-xl">
+                        <h3 class="text-xl font-black mb-6">Find Us</h3>
+                        <div class="space-y-4 mb-8">
+                            <div class="flex items-start gap-4">
+                                <i class="fas fa-map-marker-alt text-teal-400 mt-1"></i>
+                                <p class="text-sm text-slate-300">NH-66, Nullipady, Kasaragod, Kerala - 671121</p>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <i class="fas fa-phone text-teal-400 mt-1"></i>
+                                <p class="text-sm text-slate-300">04994 222 324 <br> 04994 230 180</p>
+                            </div>
+                        </div>
+                        <a href="https://www.google.com/maps/dir/?api=1&destination=12.5074,74.9965" target="_blank" class="block w-full bg-teal-500 text-white text-center font-black py-4 rounded-2xl hover:bg-teal-600 transition shadow-lg shadow-teal-500/20 uppercase text-xs tracking-widest">
+                            Get Directions
+                        </a>
+                    </div>
+
+                    <!-- Facilities -->
+                    <div class="bg-white p-8 rounded-[2.5rem] border border-slate-100">
+                        <h3 class="font-black text-slate-900 mb-6">Facilities</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-center gap-3">
+                                <i class="fas fa-check-circle text-teal-500"></i>
+                                <span class="text-sm font-bold text-slate-600">24x7 Ambulance</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <i class="fas fa-check-circle text-teal-500"></i>
+                                <span class="text-sm font-bold text-slate-600">Modern Dialysis Unit</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <i class="fas fa-check-circle text-teal-500"></i>
+                                <span class="text-sm font-bold text-slate-600">EEG & Neonatal Care</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <i class="fas fa-check-circle text-teal-500"></i>
+                                <span class="text-sm font-bold text-slate-600">Wheelchair Accessible</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
+    </main>
 
-        <!-- About Section -->
-        <section class="mb-10">
-            <h3 class="text-slate-800 font-extrabold text-lg mb-4 flex items-center gap-2">
-                <span class="w-1.5 h-6 bg-sky-500 rounded-full"></span> Hospital Overview
-            </h3>
-            <div class="bg-white p-5 rounded-3xl border border-slate-100 shadow-sm leading-relaxed text-slate-600 text-sm">
-                Established in the early 1990s, Carewell Hospital has grown into a leading multi-specialty trauma center. It is renowned for its state-of-the-art operation theatres, ICU facilities, and its recent addition of a Primary Stroke Response Center.
-            </div>
-        </section>
+    <footer class="bg-white border-t border-slate-100 py-12">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <p class="text-[10px] font-black text-slate-300 uppercase tracking-widest mb-4">A Unit of Carewell Hospital & Research Centre Pvt Ltd</p>
+            <p class="text-slate-400 text-xs">Serving Kasaragod with expert medical care for over 30 years.</p>
+        </div>
+    </footer>
 
-        <!-- Specialties Grid -->
-        <section class="mb-10">
-            <h3 class="text-slate-800 font-extrabold text-lg mb-4">Core Departments</h3>
-            <div class="grid grid-cols-2 gap-3">
-                <div class="dept-card p-4 rounded-2xl flex flex-col gap-2">
-                    <i class="fas fa-heartbeat text-rose-500 text-xl"></i>
-                    <span class="text-sm font-bold text-slate-700">Trauma & Emergency</span>
-                </div>
-                <div class="dept-card p-4 rounded-2xl flex flex-col gap-2">
-                    <i class="fas fa-brain text-purple-500 text-xl"></i>
-                    <span class="text-sm font-bold text-slate-700">Neurology</span>
-                </div>
-                <div class="dept-card p-4 rounded-2xl flex flex-col gap-2">
-                    <i class="fas fa-kidneys text-amber-600 text-xl"></i>
-                    <span class="text-sm font-bold text-slate-700">Nephrology</span>
-                </div>
-                <div class="dept-card p-4 rounded-2xl flex flex-col gap-2">
-                    <i class="fas fa-eye text-sky-500 text-xl"></i>
-                    <span class="text-sm font-bold text-slate-700">Ophthalmology</span>
-                </div>
-            </div>
-        </section>
+    <script>
+        // COORDINATES FOR NULLIPADY, KASARAGOD (CAREWELL LOCATION)
+        const hospitalCoords = { lat: 12.5074, lon: 74.9965 };
 
-        <!-- Extensive Doctor List -->
-        <section class="mb-10">
-            <h3 class="text-slate-800 font-extrabold text-lg mb-4 flex items-center justify-between">
-                <span>Specialist Directory</span>
-            </h3>
-            <div class="space-y-4">
-                <!-- Surgery & Management -->
-                <div class="bg-white p-5 rounded-3xl border border-slate-100">
-                    <h4 class="text-xs font-black text-sky-600 uppercase tracking-widest mb-4">Leadership & Surgery</h4>
-                    <div class="space-y-4">
-                        <div class="flex items-center gap-3">
-                            <div class="w-10 h-10 bg-slate-50 rounded-full flex items-center justify-center text-slate-400"><i class="fas fa-user-md"></i></div>
-                            <div>
-                                <p class="text-sm font-bold text-slate-800">Dr. M A Mohammed Afsal</p>
-                                <p class="text-[10px] text-slate-500">Managing Director / General Surgeon</p>
-                            </div>
-                        </div>
-                        <div class="flex items-center gap-3">
-                            <div class="w-10 h-10 bg-slate-50 rounded-full flex items-center justify-center text-slate-400"><i class="fas fa-user-md"></i></div>
+        function calculateDistance(lat1, lon1, lat2, lon2) {
+            const R = 6371; // km
+            const dLat = (lat2 - lat1) * Math.PI / 180;
+            const dLon = (lon2 - lon1) * Math.PI / 180;
+            const a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+                      Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
+                      Math.sin(dLon / 2) * Math.sin(dLon / 2);
+            const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+            return (R * c).toFixed(2);
+        }
+
+        function trackUser() {
+            if (navigator.geolocation) {
+                navigator.geolocation.watchPosition((position) => {
+                    const dist = calculateDistance(
+                        position.coords.latitude, 
+                        position.coords.longitude, 
+                        hospitalCoords.lat, 
+                        hospitalCoords.lon
+                    );
+                    document.getElementById('dist-display').innerHTML = 
+                        `<i class="fas fa-location-arrow"></i> ${dist} km from your current location`;
+                }, (error) => {
+                    document.getElementById('dist-display').innerHTML = 
+                        `<i class="fas fa-map-marker-alt"></i> Location access required`;
+                }, {
+                    enableHighAccuracy: true
+                });
+            }
+        }
+        window.onload = trackUser;
+    </script>
+</body>
+</html>
+
                             <div>
                                 <p class="text-sm font-bold text-slate-800">Dr. Zuhara Beefathima Hameed</p>
                                 <p class="text-[10px] text-slate-500">Chairman / OBG Specialist</p>
