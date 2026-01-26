@@ -6,9 +6,6 @@
     <title>Janardan Hospital | Kasaragod | MediLink Kerala</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <!-- Meta for Filtering -->
-    <meta name="city" content="kasaragod">
-    <meta name="category" content="hospital">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
         body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #f8fafc; }
@@ -20,17 +17,26 @@
         }
         
         .doctor-card {
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             border: 1px solid #f1f5f9;
         }
         .doctor-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05);
+            transform: translateY(-5px);
             border-color: #0ea5e9;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
         }
 
         .img-gradient {
-            background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.85) 100%);
+            background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.9) 100%);
+        }
+        
+        .status-pulse {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.5; }
+            100% { opacity: 1; }
         }
     </style>
 </head>
@@ -54,14 +60,13 @@
 
                 <div class="hidden md:flex items-center gap-8 text-sm font-bold text-slate-600">
                     <a href="../../index.html" class="hover:text-sky-600 transition">Home</a>
-                    <a href="#" class="hover:text-sky-600 transition">Hospitals</a>
-                    <a href="#" class="hover:text-sky-600 transition">Specialists</a>
-                    <a href="#" class="hover:text-sky-600 transition">Emergency</a>
+                    <a href="#" class="hover:text-sky-600 transition">Kasaragod Hospitals</a>
+                    <a href="#" class="hover:text-sky-600 transition">Contact</a>
                 </div>
 
                 <div class="flex items-center gap-3">
                     <a href="tel:04994230243" class="bg-rose-500 text-white px-5 py-2.5 rounded-full text-xs font-black shadow-lg shadow-rose-500/30 flex items-center gap-2">
-                        <i class="fas fa-phone-alt animate-pulse"></i> EMERGENCY
+                        <i class="fas fa-phone-alt status-pulse"></i> EMERGENCY
                     </a>
                 </div>
             </div>
@@ -69,41 +74,47 @@
     </nav>
 
     <!-- HOSPITAL HERO -->
-    <header class="relative w-full h-[450px] bg-slate-200 overflow-hidden">
-        <img src="https://i.ibb.co/8Lwf56MR/x.jpg" alt="Janardan Hospital Kasaragod" class="w-full h-full object-cover">
+    <header class="relative w-full h-[400px] bg-slate-200 overflow-hidden">
+        <img src="https://i.ibb.co/8Lwf56MR/x.jpg" alt="Janardan Hospital" class="w-full h-full object-cover">
         <div class="absolute inset-0 img-gradient flex flex-col justify-end p-6 md:p-12">
             <div class="max-w-5xl mx-auto w-full">
-                <span class="bg-sky-500 text-white text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-widest mb-4 inline-block">Established 1963</span>
-                <h1 class="text-3xl md:text-5xl font-black text-white mb-2 leading-tight">Janardan Hospital</h1>
+                <div class="flex gap-2 mb-4">
+                    <span class="bg-sky-500 text-white text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-widest">Est. 1963</span>
+                    <span class="bg-white/20 backdrop-blur-md text-white text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-widest">Kasaragod City</span>
+                </div>
+                <h1 class="text-3xl md:text-5xl font-black text-white mb-2 leading-tight tracking-tight">Janardan Hospital</h1>
                 <div class="flex flex-wrap items-center gap-4 text-white/90 text-sm font-medium">
                     <span class="flex items-center gap-2"><i class="fas fa-map-marker-alt text-sky-400"></i> Bank Road, Kasaragod</span>
-                    <span id="distance-badge" class="bg-white/20 backdrop-blur-md px-3 py-1 rounded-lg flex items-center gap-2">
-                        <i class="fas fa-route text-sky-300"></i> Calculating distance...
+                    <span id="dist-display" class="bg-sky-600 text-white px-3 py-1 rounded-lg flex items-center gap-2 font-bold shadow-lg">
+                        <i class="fas fa-location-arrow"></i> Calculating distance...
                     </span>
                 </div>
             </div>
         </div>
     </header>
 
-    <!-- QUICK STATS -->
-    <div class="bg-white border-b border-slate-100 py-6">
-        <div class="max-w-7xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-6">
-            <div class="text-center md:border-r border-slate-100">
-                <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">City</p>
-                <p class="font-bold text-slate-800 uppercase">Kasaragod</p>
+    <!-- INFO GRID -->
+    <div class="bg-white border-b border-slate-100 py-8">
+        <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
+            <div class="flex items-center gap-4 md:border-r border-slate-100 last:border-0">
+                <div class="w-12 h-12 bg-sky-50 rounded-2xl flex items-center justify-center text-sky-600 text-xl"><i class="fas fa-clock"></i></div>
+                <div>
+                    <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Emergency Services</p>
+                    <p class="font-bold text-slate-800">Available 24x7</p>
+                </div>
             </div>
-            <div class="text-center md:border-r border-slate-100">
-                <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">General Appointments</p>
-                <p class="font-bold text-slate-800">+91 4994 226555</p>
+            <div class="flex items-center gap-4 md:border-r border-slate-100 last:border-0">
+                <div class="w-12 h-12 bg-sky-50 rounded-2xl flex items-center justify-center text-sky-600 text-xl"><i class="fas fa-calendar-check"></i></div>
+                <div>
+                    <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">OP Appointments</p>
+                    <p class="font-bold text-slate-800">+91 4994 226555</p>
+                </div>
             </div>
-            <div class="text-center md:border-r border-slate-100">
-                <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">Inpatient Care</p>
-                <p class="font-bold text-slate-800">24 Hours</p>
-            </div>
-            <div class="text-center">
-                <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">Trust Score</p>
-                <div class="flex items-center justify-center gap-1 text-amber-400">
-                    <i class="fas fa-star text-xs"></i><i class="fas fa-star text-xs"></i><i class="fas fa-star text-xs"></i><i class="fas fa-star text-xs"></i><i class="fas fa-star-half-alt text-xs"></i>
+            <div class="flex items-center gap-4">
+                <div class="w-12 h-12 bg-rose-50 rounded-2xl flex items-center justify-center text-rose-600 text-xl"><i class="fas fa-hospital-user"></i></div>
+                <div>
+                    <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">ICU Visiting Hours</p>
+                    <p class="font-bold text-slate-800 text-xs">8:30-9:30 | 1:00-1:30 | 5:00-6:00</p>
                 </div>
             </div>
         </div>
@@ -111,231 +122,177 @@
 
     <!-- MAIN CONTENT -->
     <main class="max-w-7xl mx-auto px-4 py-12">
-        
         <div class="flex flex-col lg:flex-row gap-12">
             
             <!-- DOCTOR DIRECTORY -->
             <div class="lg:w-2/3">
                 <div class="mb-10">
-                    <h2 class="text-2xl font-black text-slate-900 mb-2">Hospital Doctors</h2>
-                    <p class="text-slate-500 text-sm">Specialist consultants available at Janardan Hospital.</p>
+                    <h2 class="text-2xl font-black text-slate-900 mb-2">Our Specialist Doctors</h2>
+                    <p class="text-slate-500 text-sm">Providing expert care with a legacy of over 60 years in Kasaragod.</p>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <!-- General Medicine -->
-                    <div class="doctor-card bg-white p-6 rounded-[2rem]">
-                        <div class="flex items-start justify-between mb-4">
-                            <div class="w-12 h-12 bg-sky-50 rounded-xl flex items-center justify-center text-sky-600 font-bold">KS</div>
-                            <span class="bg-sky-100 text-sky-700 text-[8px] font-black px-2 py-1 rounded">GEN. MEDICINE</span>
+                <div class="space-y-12">
+                    <!-- Internal Medicine -->
+                    <section>
+                        <h3 class="text-xs font-black text-sky-600 uppercase tracking-[0.2em] mb-4 border-b border-sky-100 pb-2">Medical & Internal Medicine</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="doctor-card bg-white p-5 rounded-3xl">
+                                <h4 class="font-bold text-slate-800">Dr. K.P. Suraj</h4>
+                                <p class="text-xs text-slate-500">General Medicine</p>
+                            </div>
+                            <div class="doctor-card bg-white p-5 rounded-3xl">
+                                <h4 class="font-bold text-slate-800">Dr. Jithesh</h4>
+                                <p class="text-xs text-slate-500">Physician</p>
+                            </div>
+                            <div class="doctor-card bg-white p-5 rounded-3xl">
+                                <h4 class="font-bold text-slate-800">Dr. Sreeram</h4>
+                                <p class="text-xs text-slate-500">General Medicine</p>
+                            </div>
                         </div>
-                        <h4 class="font-bold text-slate-900">Dr. K.P. Suraj</h4>
-                        <p class="text-[11px] text-slate-400 mb-4">General Medicine Specialist</p>
-                        <a href="tel:04994226555" class="text-xs font-bold text-sky-600 flex items-center gap-2">
-                            <i class="fas fa-calendar-alt"></i> Request Timing
-                        </a>
-                    </div>
+                    </section>
 
-                    <!-- OBG -->
-                    <div class="doctor-card bg-white p-6 rounded-[2rem]">
-                        <div class="flex items-start justify-between mb-4">
-                            <div class="w-12 h-12 bg-rose-50 rounded-xl flex items-center justify-center text-rose-600 font-bold">JS</div>
-                            <span class="bg-rose-100 text-rose-700 text-[8px] font-black px-2 py-1 rounded">GYNECOLOGY</span>
+                    <!-- Gynecology -->
+                    <section>
+                        <h3 class="text-xs font-black text-rose-600 uppercase tracking-[0.2em] mb-4 border-b border-rose-100 pb-2">Women's Health & Infertility</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="doctor-card bg-white p-5 rounded-3xl">
+                                <h4 class="font-bold text-slate-800">Dr. Jayalakshmi Suraj</h4>
+                                <p class="text-xs text-slate-500 italic">OBG & Infertility Specialist</p>
+                            </div>
+                            <div class="doctor-card bg-white p-5 rounded-3xl">
+                                <h4 class="font-bold text-slate-800">Dr. Meekha</h4>
+                                <p class="text-xs text-slate-500">Gynaecologist</p>
+                            </div>
                         </div>
-                        <h4 class="font-bold text-slate-900">Dr. Jayalakshmi Suraj</h4>
-                        <p class="text-[11px] text-slate-400 mb-4">OBG & Infertility Specialist</p>
-                        <a href="tel:04994226555" class="text-xs font-bold text-rose-600 flex items-center gap-2">
-                            <i class="fas fa-calendar-alt"></i> Request Timing
-                        </a>
-                    </div>
+                    </section>
 
-                    <!-- Ortho -->
-                    <div class="doctor-card bg-white p-6 rounded-[2rem]">
-                        <div class="flex items-start justify-between mb-4">
-                            <div class="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center text-blue-600 font-bold">KV</div>
-                            <span class="bg-blue-100 text-blue-700 text-[8px] font-black px-2 py-1 rounded">ORTHOPEDICS</span>
+                    <!-- Orthopedics -->
+                    <section>
+                        <h3 class="text-xs font-black text-blue-600 uppercase tracking-[0.2em] mb-4 border-b border-blue-100 pb-2">Orthopedics</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                            <div class="doctor-card bg-white p-5 rounded-3xl">
+                                <h4 class="font-bold text-slate-800 text-sm">Dr. Krishna Vivek E.K.</h4>
+                            </div>
+                            <div class="doctor-card bg-white p-5 rounded-3xl">
+                                <h4 class="font-bold text-slate-800 text-sm">Dr. Sharath Belemane</h4>
+                            </div>
+                            <div class="doctor-card bg-white p-5 rounded-3xl">
+                                <h4 class="font-bold text-slate-800 text-sm">Dr. Ramu</h4>
+                            </div>
                         </div>
-                        <h4 class="font-bold text-slate-900">Dr. Krishna Vivek E.K.</h4>
-                        <p class="text-[11px] text-slate-400 mb-4">Orthopedic Surgeon</p>
-                        <a href="tel:04994226555" class="text-xs font-bold text-blue-600 flex items-center gap-2">
-                            <i class="fas fa-calendar-alt"></i> Request Timing
-                        </a>
-                    </div>
+                    </section>
 
-                    <!-- Pediatrics -->
-                    <div class="doctor-card bg-white p-6 rounded-[2rem]">
-                        <div class="flex items-start justify-between mb-4">
-                            <div class="w-12 h-12 bg-amber-50 rounded-xl flex items-center justify-center text-amber-600 font-bold">DR</div>
-                            <span class="bg-amber-100 text-amber-700 text-[8px] font-black px-2 py-1 rounded">PEDIATRICS</span>
+                    <!-- Visiting Specialists -->
+                    <section>
+                        <h3 class="text-xs font-black text-slate-400 uppercase tracking-[0.2em] mb-4 border-b border-slate-100 pb-2">Visiting Specialists</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-slate-100 text-slate-600 px-3 py-1.5 rounded-xl text-[11px] font-bold">Dr. Rohith Pai (Neurology)</span>
+                            <span class="bg-slate-100 text-slate-600 px-3 py-1.5 rounded-xl text-[11px] font-bold">Dr. Narasimha Phai (Cardiology)</span>
+                            <span class="bg-slate-100 text-slate-600 px-3 py-1.5 rounded-xl text-[11px] font-bold">Dr. Ganaraj Kulamarva (Gastroenterology)</span>
+                            <span class="bg-slate-100 text-slate-600 px-3 py-1.5 rounded-xl text-[11px] font-bold">Dr. Vidya Bhat (Gastroenterologist)</span>
                         </div>
-                        <h4 class="font-bold text-slate-900">Dr. Kumar</h4>
-                        <p class="text-[11px] text-slate-400 mb-4">Pediatric Nephrology</p>
-                        <a href="tel:04994226555" class="text-xs font-bold text-amber-600 flex items-center gap-2">
-                            <i class="fas fa-calendar-alt"></i> Request Timing
-                        </a>
-                    </div>
-                </div>
-
-                <!-- ALL DEPARTMENTS -->
-                <div class="mt-12">
-                    <h3 class="text-xl font-black text-slate-900 mb-6">Clinical Departments</h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="bg-white border border-slate-200 px-4 py-2 rounded-xl text-xs font-bold text-slate-600">General Medicine</span>
-                        <span class="bg-white border border-slate-200 px-4 py-2 rounded-xl text-xs font-bold text-slate-600">Laparoscopic Surgery</span>
-                        <span class="bg-white border border-slate-200 px-4 py-2 rounded-xl text-xs font-bold text-slate-600">Infertility Clinic</span>
-                        <span class="bg-white border border-slate-200 px-4 py-2 rounded-xl text-xs font-bold text-slate-600">NICU & PICU</span>
-                        <span class="bg-white border border-slate-200 px-4 py-2 rounded-xl text-xs font-bold text-slate-600">Physiotherapy</span>
-                        <span class="bg-white border border-slate-200 px-4 py-2 rounded-xl text-xs font-bold text-slate-600">Urology</span>
-                        <span class="bg-white border border-slate-200 px-4 py-2 rounded-xl text-xs font-bold text-slate-600">Radiology</span>
-                    </div>
+                    </section>
                 </div>
             </div>
 
             <!-- SIDEBAR -->
-            <div class="lg:w-1/3">
-                <div class="sticky top-24 space-y-6">
-                    
-                    <!-- Appointment Card -->
-                    <div class="bg-slate-900 text-white p-8 rounded-[2.5rem] shadow-xl relative overflow-hidden">
-                        <div class="relative z-10">
-                            <h3 class="text-xl font-black mb-2">Book Appointment</h3>
-                            <p class="text-slate-400 text-xs mb-8">Direct line to hospital booking desk.</p>
-                            
-                            <div class="space-y-4 mb-8">
-                                <a href="tel:9495687892" class="flex items-center gap-4 bg-white/5 p-4 rounded-2xl hover:bg-white/10 transition">
-                                    <i class="fas fa-mobile-alt text-sky-400"></i>
-                                    <div><p class="text-[10px] font-bold text-slate-500 uppercase">Mobile</p><p class="text-sm font-bold">9495687892</p></div>
-                                </a>
-                                <a href="tel:04994226555" class="flex items-center gap-4 bg-white/5 p-4 rounded-2xl hover:bg-white/10 transition">
-                                    <i class="fas fa-phone-alt text-sky-400"></i>
-                                    <div><p class="text-[10px] font-bold text-slate-500 uppercase">Landline</p><p class="text-sm font-bold">04994-226555</p></div>
-                                </a>
+            <div class="lg:w-1/3 space-y-6">
+                <!-- Location Info -->
+                <div class="bg-slate-900 text-white p-8 rounded-[2.5rem] shadow-xl">
+                    <h3 class="text-xl font-black mb-6">Contact Details</h3>
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <i class="fas fa-map-marked-alt text-sky-400 mt-1"></i>
+                            <div>
+                                <p class="text-xs text-slate-400 font-bold uppercase mb-1">Address</p>
+                                <p class="text-sm font-medium leading-relaxed">Bank Road, Kasaragod - 671121, Kerala</p>
                             </div>
-
-                            <a href="https://www.google.com/maps/dir/?api=1&destination=Janardan+Hospital+Kasaragod" target="_blank" class="block w-full bg-sky-500 text-white text-center font-black py-4 rounded-2xl shadow-lg shadow-sky-500/20">
-                                OPEN IN MAPS
-                            </a>
                         </div>
-                        <div class="absolute -bottom-10 -right-10 w-40 h-40 bg-sky-600/20 rounded-full blur-3xl"></div>
+                        <div class="flex items-start gap-4">
+                            <i class="fas fa-phone-alt text-sky-400 mt-1"></i>
+                            <div>
+                                <p class="text-xs text-slate-400 font-bold uppercase mb-1">Phone</p>
+                                <p class="text-sm font-black">+91 4994 230243</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <i class="fas fa-mobile-alt text-sky-400 mt-1"></i>
+                            <div>
+                                <p class="text-xs text-slate-400 font-bold uppercase mb-1">Appointment Mobile</p>
+                                <p class="text-sm font-black">+91 9495687892</p>
+                            </div>
+                        </div>
                     </div>
+                    <a href="https://www.google.com/maps/dir/?api=1&destination=12.498863,74.992248" target="_blank" class="mt-8 block w-full bg-sky-500 hover:bg-sky-600 text-center font-black py-4 rounded-2xl transition shadow-lg shadow-sky-500/20">
+                        GET DIRECTIONS
+                    </a>
+                </div>
 
-                    <!-- Facilities -->
-                    <div class="bg-white p-8 rounded-[2.5rem] border border-slate-100">
-                        <h3 class="font-black text-slate-900 mb-6">Key Facilities</h3>
-                        <ul class="space-y-4">
-                            <li class="flex items-center gap-3 text-sm font-bold text-slate-600"><i class="fas fa-check text-sky-500"></i> 24/7 Trauma Care</li>
-                            <li class="flex items-center gap-3 text-sm font-bold text-slate-600"><i class="fas fa-check text-sky-500"></i> CT Scan & Digital X-Ray</li>
-                            <li class="flex items-center gap-3 text-sm font-bold text-slate-600"><i class="fas fa-check text-sky-500"></i> 4th Gen OT Suites</li>
-                            <li class="flex items-center gap-3 text-sm font-bold text-slate-600"><i class="fas fa-check text-sky-500"></i> In-House Pharmacy</li>
-                        </ul>
-                    </div>
+                <!-- Facilities -->
+                <div class="bg-white p-8 rounded-[2.5rem] border border-slate-100">
+                    <h3 class="font-black text-slate-900 mb-6">Modern Facilities</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-center gap-3 text-sm font-bold text-slate-600"><i class="fas fa-check text-sky-500"></i> ICU & NICU Services</li>
+                        <li class="flex items-center gap-3 text-sm font-bold text-slate-600"><i class="fas fa-check text-sky-500"></i> CT Scan & Digital X-Ray</li>
+                        <li class="flex items-center gap-3 text-sm font-bold text-slate-600"><i class="fas fa-check text-sky-500"></i> 4th Gen Operation Theatres</li>
+                        <li class="flex items-center gap-3 text-sm font-bold text-slate-600"><i class="fas fa-check text-sky-500"></i> 24x7 In-house Pharmacy</li>
+                        <li class="flex items-center gap-3 text-sm font-bold text-slate-600"><i class="fas fa-check text-sky-500"></i> Cashless Insurance (Star Health)</li>
+                    </ul>
                 </div>
             </div>
         </div>
-
     </main>
 
     <footer class="bg-white border-t border-slate-100 py-12">
         <div class="max-w-7xl mx-auto px-4 text-center">
-            <p class="text-[10px] font-black text-slate-300 uppercase tracking-widest mb-4">MediLink Kerala Official Resource</p>
-            <p class="text-slate-400 text-xs">Bank Road, Kasaragod - 671121. For hospital inquiries: janardanhospital@gmail.com</p>
+            <p class="text-[10px] font-black text-slate-300 uppercase tracking-widest mb-4">Official MediLink Directory Portal</p>
+            <p class="text-slate-400 text-xs leading-relaxed">Janardan Hospital, Bank Road, Kasaragod. <br> Serving with compassion since 1963.</p>
         </div>
     </footer>
 
     <script>
-        const hospitalCoords = { lat: 12.5025, lon: 74.9892 }; // Bank Road, Kasaragod
+        // PRECISE COORDINATES FOR JANARDAN HOSPITAL
+        const hospitalCoords = { lat: 12.498863, lon: 74.992248 };
 
         function calculateDistance(lat1, lon1, lat2, lon2) {
-            const R = 6371;
+            const R = 6371; // km
             const dLat = (lat2 - lat1) * Math.PI / 180;
             const dLon = (lon2 - lon1) * Math.PI / 180;
             const a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
                       Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
                       Math.sin(dLon / 2) * Math.sin(dLon / 2);
             const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-            return (R * c).toFixed(1);
+            return (R * c).toFixed(2);
         }
 
-        function initLocation() {
+        function initLocationTracking() {
             if (navigator.geolocation) {
-                navigator.geolocation.getCurrentPosition((position) => {
+                // watchPosition provides continuous real-time updates
+                navigator.geolocation.watchPosition((position) => {
                     const dist = calculateDistance(
                         position.coords.latitude, 
                         position.coords.longitude, 
                         hospitalCoords.lat, 
                         hospitalCoords.lon
                     );
-                    document.getElementById('distance-badge').innerHTML = 
-                        `<i class="fas fa-route text-sky-300"></i> ${dist} km from your location`;
-                }, () => {
-                    document.getElementById('distance-badge').innerHTML = 
-                        `<i class="fas fa-map-marker-alt text-sky-300"></i> Kasaragod City Center`;
+                    document.getElementById('dist-display').innerHTML = 
+                        `<i class="fas fa-location-arrow"></i> ${dist} km from you`;
+                }, (error) => {
+                    document.getElementById('dist-display').innerHTML = 
+                        `<i class="fas fa-map-marker-alt"></i> Kasaragod Center`;
+                }, {
+                    enableHighAccuracy: true,
+                    timeout: 5000,
+                    maximumAge: 0
                 });
+            } else {
+                document.getElementById('dist-display').innerHTML = 
+                    `<i class="fas fa-map-marker-alt"></i> Location unavailable`;
             }
         }
-        window.onload = initLocation;
+
+        window.onload = initLocationTracking;
     </script>
-</body>
-</html>
-
-                        <div class="doctor-card bg-white p-3 rounded-xl shadow-sm">
-                            <p class="font-bold text-slate-800 text-sm">Dr. Jayalakshmi Suraj</p>
-                            <p class="text-[11px] text-slate-500">Infertility Specialist</p>
-                        </div>
-                        <div class="doctor-card bg-white p-3 rounded-xl shadow-sm">
-                            <p class="font-bold text-slate-800 text-sm">Dr. Meekha</p>
-                            <p class="text-[11px] text-slate-500">Gynaecologist</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Category: Surgery -->
-                <div>
-                    <h4 class="text-xs font-bold text-teal-600 mb-3 flex items-center gap-2">
-                        <i class="fas fa-scalpel"></i> SURGERY & ORTHO
-                    </h4>
-                    <div class="space-y-2">
-                        <div class="doctor-card bg-white p-3 rounded-xl shadow-sm">
-                            <p class="font-bold text-slate-800 text-sm">Dr. Krishna Vivek E.K.</p>
-                            <p class="text-[11px] text-slate-500">Orthopaedics</p>
-                        </div>
-                        <div class="doctor-card bg-white p-3 rounded-xl shadow-sm">
-                            <p class="font-bold text-slate-800 text-sm">Dr. Yateesh H.M.</p>
-                            <p class="text-[11px] text-slate-500">Consultant Endoscopic Surgeon</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <button onclick="this.nextElementSibling.classList.toggle('hidden')" class="w-full mt-4 py-2 text-xs font-bold text-slate-400 bg-slate-100 rounded-lg">SHOW ALL SPECIALISTS</button>
-            <div class="hidden mt-4 space-y-2">
-                <div class="doctor-card bg-white p-3 rounded-xl shadow-sm"><p class="font-bold text-sm">Dr. K P Suraj</p><p class="text-[11px]">General Medicine</p></div>
-                <div class="doctor-card bg-white p-3 rounded-xl shadow-sm"><p class="font-bold text-sm">Dr. Sreenivas Kamath</p><p class="text-[11px]">ENT Specialist</p></div>
-                <div class="doctor-card bg-white p-3 rounded-xl shadow-sm"><p class="font-bold text-sm">Dr. Shaheer VK</p><p class="text-[11px]">Neurology</p></div>
-                <div class="doctor-card bg-white p-3 rounded-xl shadow-sm"><p class="font-bold text-sm">Dr. Narasimha Phai</p><p class="text-[11px]">Cardiologist</p></div>
-            </div>
-        </section>
-
-        <!-- Location Footer -->
-        <section class="bg-slate-900 rounded-3xl p-6 text-white mb-8">
-            <h3 class="font-bold mb-4">Location & Access</h3>
-            <div class="flex items-start gap-4 mb-4">
-                <div class="bg-white/10 p-3 rounded-xl"><i class="fas fa-map-marked-alt"></i></div>
-                <p class="text-sm text-slate-300">Bank Road, Near KSRTC Bus Station, Kasaragod, Kerala 671121</p>
-            </div>
-            <a href="https://www.google.com/maps/dir/?api=1&destination=Janardan+Hospital+Kasaragod" class="block w-full bg-white text-slate-900 text-center py-3 rounded-xl font-bold">
-                Get Directions
-            </a>
-        </section>
-
-    </main>
-
-    <!-- Emergency Footer -->
-    <div class="fixed bottom-6 left-6 right-6 flex gap-3 max-w-3xl mx-auto">
-        <a href="tel:+914994230243" class="flex-1 bg-rose-600 text-white py-4 rounded-2xl flex items-center justify-center gap-2 font-bold shadow-xl">
-            <i class="fas fa-ambulance"></i> Emergency
-        </a>
-    </div>
-
 </body>
 </html>
 
