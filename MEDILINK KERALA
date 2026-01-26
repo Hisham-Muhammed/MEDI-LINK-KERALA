@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediLink Kerala | Hospital & Blood Directory</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap');
+        body { font-family: 'Plus Jakarta Sans', sans-serif; scroll-behavior: smooth; }
+        .hero-mesh {
+            background-color: #f8fafc;
+            background-image: radial-gradient(at 0% 0%, rgba(20, 184, 166, 0.1) 0, transparent 50%), 
+                              radial-gradient(at 100% 100%, rgba(14, 165, 233, 0.1) 0, transparent 50%);
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.05);
+        }
+        select {
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%2364748b' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+            background-position: right 0.75rem center;
+            background-repeat: no-repeat;
+            background-size: 1.2em 1.2em;
+        }
+    </style>
+</head>
+<body class="text-slate-900 hero-mesh min-h-screen flex flex-col">
+
+    <!-- Navigation (Restored to Copyright/Standard Style) -->
+    <nav class="sticky top-0 z-40 bg-white/80 backdrop-blur-md border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex items-center gap-2">
+                    <div class="bg-teal-600 p-2 rounded-lg">
+                        <i class="fas fa-hospital text-white text-lg"></i>
+                    </div>
+                    <span class="text-xl font-bold text-slate-800 tracking-tight">MediLink<span class="text-teal-600">Kerala</span></span>
+                </div>
+                <div class="hidden md:flex space-x-8 font-medium text-slate-600">
+                    <a href="#" class="hover:text-teal-600 transition">Find Hospital</a>
+                    <a href="#" class="hover:text-teal-600 transition">Doctors</a>
+                    <a href="#" class="hover:text-teal-600 transition">Emergency</a>
+                    <a href="#" class="hover:text-teal-600 transition">Contact</a>
+                </div>
+                <button class="bg-teal-50 text-teal-700 px-5 py-2 rounded-full font-semibold hover:bg-teal-100 transition">
+                    Help Desk
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="pt-16 pb-20 px-4 flex-grow">
+        <div class="max-w-7xl mx-auto text-center">
+            <h1 class="text-5xl md:text-7xl font-extrabold text-slate-900 mb-6 tracking-tight">
+                Healthcare Excellence in <br><span class="text-teal-600">Kerala</span>
+            </h1>
+            <p class="text-lg text-slate-600 mb-12 max-w-2xl mx-auto">
+                Instantly find hospitals and specialists across God's Own Country.
+            </p>
+
+            <!-- Main Search Console -->
+            <div class="glass-panel p-6 rounded-[2.5rem] max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-4">
+                <div class="space-y-1 text-left">
+                    <label class="text-[10px] font-bold text-slate-400 uppercase ml-2 tracking-widest">District</label>
+                    <select id="districtSelect" onchange="updateCities()" class="w-full bg-white border border-slate-200 rounded-2xl py-4 px-5 focus:ring-2 focus:ring-teal-500 outline-none transition-all font-medium">
+                        <option value="">Choose District</option>
+                        <option value="alappuzha">Alappuzha</option>
+                        <option value="ernakulam">Ernakulam</option>
+                        <option value="idukki">Idukki</option>
+                        <option value="kannur">Kannur</option>
+                        <option value="kasaragod">Kasaragod</option>
+                        <option value="kollam">Kollam</option>
+                        <option value="kottayam">Kottayam</option>
+                        <option value="kozhikode">Kozhikode</option>
+                        <option value="malappuram">Malappuram</option>
+                        <option value="palakkad">Palakkad</option>
+                        <option value="pathanamthitta">Pathanamthitta</option>
+                        <option value="thiruvananthapuram">Thiruvananthapuram</option>
+                        <option value="thrissur">Thrissur</option>
+                        <option value="wayanad">Wayanad</option>
+                    </select>
+                </div>
+
+                <div class="space-y-1 text-left">
+                    <label class="text-[10px] font-bold text-slate-400 uppercase ml-2 tracking-widest">City / Area</label>
+                    <select id="citySelect" class="w-full bg-white border border-slate-200 rounded-2xl py-4 px-5 focus:ring-2 focus:ring-teal-500 outline-none transition-all font-medium">
+                        <option value="">Select District First</option>
+                    </select>
+                </div>
+
+                <div class="space-y-1 text-left">
+                    <label class="text-[10px] font-bold text-slate-400 uppercase ml-2 tracking-widest">Department</label>
+                    <select id="deptSelect" class="w-full bg-white border border-slate-200 rounded-2xl py-4 px-5 focus:ring-2 focus:ring-teal-500 outline-none transition-all font-medium">
+                        <option value="">All Specialists</option>
+                        <option value="cardiology">Cardiology</option>
+                        <option value="neurology">Neurology</option>
+                        <option value="orthopedics">Orthopedics</option>
+                        <option value="pediatrics">Pediatrics</option>
+                        <option value="gynecology">Gynecology</option>
+                        <option value="general-medicine">General Medicine</option>
+                        <option value="oncology">Oncology</option>
+                    </select>
+                </div>
+
+                <div class="flex items-end">
+                    <button onclick="searchHospitals()" class="w-full bg-slate-900 hover:bg-teal-700 text-white font-bold py-4 rounded-2xl shadow-xl transition-all flex items-center justify-center gap-2 mb-[1px]">
+                        <i class="fas fa-search"></i> Find Hospital
+                    </button>
+                </div>
+            </div>
+
+            <!-- Blood Bank Button - Moved Below Search -->
+            <div class="mt-12">
+                <button onclick="openBloodModal()" class="inline-flex items-center gap-3 bg-white border-2 border-rose-100 text-rose-600 px-8 py-4 rounded-full font-bold hover:bg-rose-50 hover:border-rose-200 transition-all shadow-lg shadow-rose-900/5 group">
+                    <i class="fas fa-tint group-hover:scale-110 transition-transform"></i>
+                    Need Emergency Blood? Open Directory
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (Restored from version 1 style) -->
+    <footer class="bg-slate-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <div class="flex items-center justify-center gap-2 mb-6">
+                <i class="fas fa-hand-holding-medical text-teal-400 text-2xl"></i>
+                <span class="text-2xl font-bold">MediLink Kerala</span>
+            </div>
+            <p class="text-slate-400 mb-8 max-w-md mx-auto">Providing unified access to healthcare directory across all 14 districts. Your safety is our commitment.</p>
+            <div class="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-slate-500 text-sm">© 2026 MediLink Kerala Directory. All Rights Reserved.</p>
+                <div class="flex space-x-6 text-slate-400">
+                    <a href="#" class="hover:text-white transition"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="hover:text-white transition"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="hover:text-white transition"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="hover:text-white transition"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Blood Bank Modal -->
+    <div id="bloodModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-md hidden items-center justify-center z-[100] p-4">
+        <div class="bg-white rounded-[2.5rem] p-8 max-w-lg w-full shadow-2xl relative">
+            <button onclick="closeBloodModal()" class="absolute top-6 right-6 text-slate-400 hover:text-slate-600 text-xl">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-12 h-12 bg-rose-100 text-rose-600 rounded-2xl flex items-center justify-center text-xl">
+                    <i class="fas fa-tint"></i>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold">Blood Bank Contacts</h3>
+                    <p class="text-slate-500 text-sm">Official District Nodal Officers</p>
+                </div>
+            </div>
+
+            <select id="bloodDistrict" onchange="showBloodInfo()" class="w-full bg-slate-50 border border-slate-200 rounded-2xl py-4 px-5 mb-6 focus:ring-2 focus:ring-rose-500 outline-none font-semibold">
+                <option value="">Select Your District</option>
+                <option value="alappuzha">Alappuzha</option>
+                <option value="ernakulam">Ernakulam</option>
+                <option value="idukki">Idukki</option>
+                <option value="kannur">Kannur</option>
+                <option value="kasaragod">Kasaragod</option>
+                <option value="kollam">Kollam</option>
+                <option value="kottayam">Kottayam</option>
+                <option value="kozhikode">Kozhikode</option>
+                <option value="malappuram">Malappuram</option>
+                <option value="palakkad">Palakkad</option>
+                <option value="pathanamthitta">Pathanamthitta</option>
+                <option value="thiruvananthapuram">Thiruvananthapuram</option>
+                <option value="thrissur">Thrissur</option>
+                <option value="wayanad">Wayanad</option>
+            </select>
+
+            <div id="bloodResult" class="hidden">
+                <div class="bg-slate-50 rounded-2xl p-5 border border-slate-100">
+                    <h4 id="officerName" class="text-lg font-bold text-slate-800 mb-1">...</h4>
+                    <p id="officerLoc" class="text-slate-500 text-sm mb-4">...</p>
+                    <a id="officerPhone" href="#" class="flex items-center justify-center gap-3 bg-rose-600 text-white py-3.5 rounded-xl font-bold hover:bg-rose-700 transition">
+                        <i class="fas fa-phone-alt"></i> Call Now
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const districtCities = {
+            kasaragod: ["Kasaragod", "Kanhangad", "Uppala", "Nileshwaram"],
+            kannur: ["Kannur", "Thalassery", "Payyanur", "Taliparamba"],
+            kozhikode: ["Kozhikode", "Vatakara", "Quilandy"],
+            malappuram: ["Malappuram", "Manjeri", "Tirur", "Kottakkal"],
+            ernakulam: ["Kochi", "Aluva", "Muvattupuzha", "Angamaly"],
+            thiruvananthapuram: ["Trivandrum", "Neyyattinkara", "Attingal"],
+            thrissur: ["Thrissur", "Chalakudy", "Guruvayur"],
+            palakkad: ["Palakkad", "Ottapalam", "Mannarkkad"],
+            alappuzha: ["Alappuzha", "Cherthala", "Kayamkulam"],
+            kollam: ["Kollam", "Karunagappally", "Punalur"],
+            kottayam: ["Kottayam", "Changanassery", "Pala"],
+            idukki: ["Thodupuzha", "Kattappana"],
+            wayanad: ["Kalpetta", "Mananthavady"],
+            pathanamthitta: ["Pathanamthitta", "Adoor", "Thiruvalla"]
+        };
+
+        const bloodDirectory = {
+            kasaragod: { name: "Dist. Hospital Kanhangad", loc: "Regional Blood Center", tel: "0467-2200210" },
+            kannur: { name: "Dist. Hospital Kannur", loc: "Blood Bank Dept", tel: "0497-2731333" },
+            kozhikode: { name: "Medical College Kozhikode", loc: "Dept of Transfusion", tel: "0495-2350212" },
+            malappuram: { name: "Dist. Hospital Manjeri", loc: "Blood Component Unit", tel: "0483-2766880" },
+            ernakulam: { name: "General Hospital Ernakulam", loc: "Regional Blood Bank", tel: "0484-2361251" },
+            thiruvananthapuram: { name: "General Hospital TVM", loc: "Blood Bank Wing", tel: "0471-2307874" },
+            thrissur: { name: "General Hospital Thrissur", loc: "Dist Blood Bank", tel: "0487-2333031" },
+            palakkad: { name: "Dist. Hospital Palakkad", loc: "Transfusion Center", tel: "0491-2534524" },
+            alappuzha: { name: "General Hospital Alappuzha", loc: "Nodal Blood Center", tel: "0477-2251147" },
+            kollam: { name: "Dist. Hospital Kollam", loc: "Victoria Blood Bank", tel: "0474-2742051" },
+            kottayam: { name: "Dist. Hospital Kottayam", loc: "Regional Blood Bank", tel: "0481-2563612" },
+            idukki: { name: "Dist. Hospital Idukki", loc: "Blood Unit Painavu", tel: "0486-2232477" },
+            wayanad: { name: "Dist. Hospital Mananthavady", loc: "Wayanad Blood Center", tel: "0493-5240210" },
+            pathanamthitta: { name: "General Hospital Pathanamthitta", loc: "Regional Unit", tel: "0468-2222210" }
+        };
+
+        function updateCities() {
+            const district = document.getElementById('districtSelect').value;
+            const citySelect = document.getElementById('citySelect');
+            citySelect.innerHTML = '<option value="">All Cities</option>';
+            if (district && districtCities[district]) {
+                districtCities[district].forEach(city => {
+                    const opt = document.createElement('option');
+                    opt.value = city.toLowerCase().replace(/\s+/g, '-');
+                    opt.textContent = city;
+                    citySelect.appendChild(opt);
+                });
+            } else {
+                citySelect.innerHTML = '<option value="">Select District First</option>';
+            }
+        }
+
+        function searchHospitals() {
+            const district = document.getElementById('districtSelect').value;
+            const city = document.getElementById('citySelect').value;
+            const dept = document.getElementById('deptSelect').value;
+            if (!district) return;
+            let url = `Hospital/${district}.html`;
+            let params = [];
+            if (city) params.push(`city=${city}`);
+            if (dept) params.push(`dept=${dept}`);
+            if (params.length > 0) url += `?${params.join('&')}`;
+            window.location.href = url;
+        }
+
+        function openBloodModal() { document.getElementById('bloodModal').style.display = 'flex'; }
+        function closeBloodModal() { document.getElementById('bloodModal').style.display = 'none'; }
+        
+        function showBloodInfo() {
+            const district = document.getElementById('bloodDistrict').value;
+            const resultDiv = document.getElementById('bloodResult');
+            if (district && bloodDirectory[district]) {
+                const data = bloodDirectory[district];
+                document.getElementById('officerName').innerText = data.name;
+                document.getElementById('officerLoc').innerText = data.loc;
+                document.getElementById('officerPhone').innerText = `Call ${data.tel}`;
+                document.getElementById('officerPhone').href = `tel:${data.tel.replace(/-/g, '')}`;
+                resultDiv.classList.remove('hidden');
+            } else {
+                resultDiv.classList.add('hidden');
+            }
+        }
+    </script>
+</body>
+</html>
+
