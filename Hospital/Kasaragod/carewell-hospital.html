@@ -1,15 +1,17 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carewell Hospital & Research Centre | Kasaragod</title>
+    <title>Carewell Hospital & Research Centre | MediLink Kerala</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
         body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #f8fafc; }
         
+        /* Premium Menu Styles */
         .nav-glass {
             background: rgba(255, 255, 255, 0.9);
             backdrop-filter: blur(12px);
@@ -17,261 +19,284 @@
         }
         
         .doctor-card {
-            transition: all 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             border: 1px solid #f1f5f9;
         }
         .doctor-card:hover {
-            transform: translateY(-5px);
-            border-color: #2dd4bf;
-            box-shadow: 0 12px 20px -5px rgba(0, 0, 0, 0.05);
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05);
+            border-color: #06b6d4;
         }
 
         .img-gradient {
-            background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.9) 100%);
-        }
-        
-        .emergency-glow {
-            animation: glow 2s infinite;
-        }
-        @keyframes glow {
-            0%, 100% { box-shadow: 0 0 5px rgba(244, 63, 94, 0.4); }
-            50% { box-shadow: 0 0 20px rgba(244, 63, 94, 0.8); }
+            background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 100%);
         }
     </style>
 </head>
 <body class="text-slate-900">
 
-    <!-- PREMIUM MENU -->
+    <!-- ATTRACTIVE GLOBAL MENU -->
     <nav class="sticky top-0 z-[100] nav-glass">
         <div class="max-w-7xl mx-auto px-4">
             <div class="flex justify-between h-16 items-center">
+                <!-- Brand -->
                 <div class="flex items-center gap-3">
-                    <a href="kasaragod.html" class="w-9 h-9 flex items-center justify-center rounded-xl bg-slate-100 text-slate-600 hover:bg-teal-600 hover:text-white transition-all">
+                    <a href="kasaragod.html" class="w-9 h-9 flex items-center justify-center rounded-xl bg-slate-100 text-slate-600 hover:bg-cyan-600 hover:text-white transition-all">
                         <i class="fas fa-chevron-left"></i>
                     </a>
                     <div class="flex items-center gap-2">
-                        <div class="bg-teal-600 p-1.5 rounded-lg">
-                            <i class="fas fa-hospital-symbol text-white text-sm"></i>
+                        <div class="bg-cyan-600 p-1.5 rounded-lg">
+                            <i class="fas fa-hospital text-white text-sm"></i>
                         </div>
-                        <span class="text-lg font-bold tracking-tight text-slate-800">MediLink<span class="text-teal-600">Kerala</span></span>
+                        <span class="text-lg font-bold tracking-tight text-slate-800">MediLink<span class="text-cyan-600">Kerala</span></span>
                     </div>
                 </div>
 
+                <!-- Desktop Menu -->
                 <div class="hidden md:flex items-center gap-8 text-sm font-bold text-slate-600">
-                    <a href="../../index.html" class="hover:text-teal-600 transition">Home</a>
-                    <a href="#departments" class="hover:text-teal-600 transition">Specialties</a>
-                    <a href="#doctors" class="hover:text-teal-600 transition">Doctors</a>
+                    <a href="../../index.html" class="hover:text-cyan-600 transition">Home</a>
+                    <a href="#" class="hover:text-cyan-600 transition">Find Doctors</a>
+                    <a href="#" class="hover:text-cyan-600 transition">Blood Bank</a>
+                    <a href="#" class="hover:text-cyan-600 transition">Emergency</a>
                 </div>
 
+                <!-- Call Button -->
                 <div class="flex items-center gap-3">
-                    <a href="tel:04994222324" class="emergency-glow bg-rose-500 text-white px-5 py-2.5 rounded-full text-xs font-black flex items-center gap-2">
-                        <i class="fas fa-phone-alt animate-pulse"></i> 24/7 CASUALTY
+                    <a href="tel:+918848642654" class="bg-rose-500 text-white px-5 py-2.5 rounded-full text-xs font-black shadow-lg shadow-rose-500/30 flex items-center gap-2">
+                        <i class="fas fa-phone-alt animate-pulse"></i> 24/7 HELPLINE
                     </a>
                 </div>
             </div>
         </div>
     </nav>
 
-    <!-- HERO SECTION -->
+    <!-- HOSPITAL HERO -->
     <header class="relative w-full h-[400px] bg-slate-200 overflow-hidden">
-        <img src="https://i.ibb.co/twwd3bL4/x.jpg" alt="Carewell Hospital" class="w-full h-full object-cover">
+        <!-- New Primary Image with structured backup error fallback -->
+        <img src="https://i.ibb.co/twwd3bL4/x.jpg" alt="Carewell Hospital" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=1200';">
         <div class="absolute inset-0 img-gradient flex flex-col justify-end p-6 md:p-12">
             <div class="max-w-5xl mx-auto w-full">
-                <div class="flex gap-2 mb-4">
-                    <span class="bg-teal-500 text-white text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-widest">30+ Years of Service</span>
-                    <span class="bg-white/20 backdrop-blur-md text-white text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-widest">Multispeciality</span>
-                </div>
-                <h1 class="text-3xl md:text-5xl font-black text-white mb-2 tracking-tight">Carewell Hospital & Research Centre</h1>
+                <span class="bg-cyan-500 text-white text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-widest mb-4 inline-block">Premier Research & Multispecialty Hospital</span>
+                <h1 class="text-3xl md:text-5xl font-black text-white mb-2 leading-tight">Carewell Hospital & Research Centre</h1>
                 <div class="flex flex-wrap items-center gap-4 text-white/90 text-sm font-medium">
-                    <span class="flex items-center gap-2"><i class="fas fa-map-marker-alt text-teal-400"></i> NH-66, Nullipady, Kasaragod</span>
-                    <span id="dist-display" class="bg-white text-teal-700 px-3 py-1 rounded-lg flex items-center gap-2 font-bold text-xs shadow-xl">
-                        <i class="fas fa-location-arrow"></i> Calculating distance...
+                    <span class="flex items-center gap-2"><i class="fas fa-map-marker-alt text-cyan-400"></i> Nullipady, NH-66, Kasaragod</span>
+                    <span id="distance-badge" class="bg-white/20 backdrop-blur-md px-3 py-1 rounded-lg flex items-center gap-2">
+                        <i class="fas fa-route text-cyan-300"></i> Calculating distance...
                     </span>
                 </div>
             </div>
         </div>
     </header>
 
-    <!-- QUICK ACTIONS -->
-    <div class="bg-white border-b border-slate-100">
-        <div class="max-w-7xl mx-auto px-4 py-8 grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div class="flex items-center gap-4 p-4 rounded-3xl bg-slate-50 border border-slate-100">
-                <div class="w-12 h-12 bg-teal-100 rounded-2xl flex items-center justify-center text-teal-600"><i class="fas fa-ambulance"></i></div>
-                <div>
-                    <p class="text-[10px] font-bold text-slate-400 uppercase">Emergency Line</p>
-                    <p class="font-bold text-slate-800">8848 642 654</p>
-                </div>
+    <!-- INFO BAR -->
+    <div class="bg-white border-b border-slate-100 py-6">
+        <div class="max-w-7xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-6">
+            <div class="text-center md:border-r border-slate-100">
+                <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">Emergency</p>
+                <p class="font-bold text-slate-800">+91 88486 42654</p>
             </div>
-            <div class="flex items-center gap-4 p-4 rounded-3xl bg-slate-50 border border-slate-100">
-                <div class="w-12 h-12 bg-sky-100 rounded-2xl flex items-center justify-center text-sky-600"><i class="fas fa-calendar-alt"></i></div>
-                <div>
-                    <p class="text-[10px] font-bold text-slate-400 uppercase">Appointments</p>
-                    <p class="font-bold text-slate-800">04994 222 324</p>
-                </div>
+            <div class="text-center md:border-r border-slate-100">
+                <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">Appointments</p>
+                <p class="font-bold text-slate-800">04994-230180</p>
             </div>
-            <div class="flex items-center gap-4 p-4 rounded-3xl bg-slate-50 border border-slate-100">
-                <div class="w-12 h-12 bg-purple-100 rounded-2xl flex items-center justify-center text-purple-600"><i class="fas fa-notes-medical"></i></div>
-                <div>
-                    <p class="text-[10px] font-bold text-slate-400 uppercase">Email Support</p>
-                    <p class="font-bold text-slate-800 text-sm">carewellhospital@gmail.com</p>
-                </div>
+            <div class="text-center md:border-r border-slate-100">
+                <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">Primary Stroke Centre</p>
+                <span class="font-bold text-emerald-600 flex items-center justify-center gap-1"><i class="fas fa-brain"></i> Active 24/7</span>
+            </div>
+            <div class="text-center">
+                <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">Status</p>
+                <span class="flex items-center justify-center gap-2 font-bold text-cyan-600">
+                    <span class="w-2 h-2 bg-cyan-500 rounded-full animate-ping"></span> Live Now
+                </span>
             </div>
         </div>
     </div>
 
-    <!-- CONTENT -->
+    <!-- MAIN CONTENT -->
     <main class="max-w-7xl mx-auto px-4 py-12">
+        
         <div class="flex flex-col lg:flex-row gap-12">
             
+            <!-- DOCTOR LIST -->
             <div class="lg:w-2/3">
-                <!-- DOCTORS -->
-                <section id="doctors" class="mb-16">
-                    <h2 class="text-2xl font-black text-slate-900 mb-8 flex items-center gap-3">
-                        <span class="w-2 h-8 bg-teal-500 rounded-full"></span>
-                        Medical Leadership & Specialists
-                    </h2>
+                <h2 class="text-2xl font-black text-slate-900 mb-8 flex items-center gap-3">
+                    <i class="fas fa-user-md text-cyan-600"></i> Specialist Doctor Directory
+                </h2>
 
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <!-- Dr. Zuhara -->
-                        <div class="doctor-card bg-white p-6 rounded-[2.5rem]">
-                            <div class="flex justify-between items-start mb-4">
-                                <div class="w-14 h-14 bg-teal-50 rounded-2xl flex items-center justify-center text-teal-600 font-black">ZB</div>
-                                <span class="bg-teal-100 text-teal-700 text-[10px] font-black px-3 py-1 rounded-full">CHAIRMAN</span>
-                            </div>
-                            <h4 class="text-lg font-bold text-slate-800">Dr. Zuhara Beefathima Hameed</h4>
-                            <p class="text-xs text-slate-500 font-bold uppercase mb-4 tracking-tighter">Obstetrics & Gynaecology</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6" id="doctor-list">
+                    <!-- Dr. Jayadev Kangila -->
+                    <div class="doctor-card bg-white p-6 rounded-[2rem]">
+                        <div class="flex items-start justify-between mb-4">
+                            <div class="w-14 h-14 bg-cyan-50 rounded-2xl flex items-center justify-center text-cyan-600 text-xl font-bold">JK</div>
+                            <span class="bg-cyan-100 text-cyan-700 text-[9px] font-black px-2 py-1 rounded">GEN. MEDICINE</span>
                         </div>
-
-                        <!-- Dr. Afsal -->
-                        <div class="doctor-card bg-white p-6 rounded-[2.5rem]">
-                            <div class="flex justify-between items-start mb-4">
-                                <div class="w-14 h-14 bg-sky-50 rounded-2xl flex items-center justify-center text-sky-600 font-black">MA</div>
-                                <span class="bg-sky-100 text-sky-700 text-[10px] font-black px-3 py-1 rounded-full">MANAGING DIRECTOR</span>
-                            </div>
-                            <h4 class="text-lg font-bold text-slate-800">Dr. M A Mohammed Afsal</h4>
-                            <p class="text-xs text-slate-500 font-bold uppercase mb-4 tracking-tighter">General Surgeon</p>
-                        </div>
-
-                        <!-- Specialists List -->
-                        <div class="col-span-1 md:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
-                            <div class="bg-white border border-slate-100 p-4 rounded-2xl">
-                                <p class="text-[10px] font-black text-teal-600 uppercase mb-1">General Medicine</p>
-                                <p class="font-bold text-slate-800">Dr. Jayadev Kangila</p>
-                            </div>
-                            <div class="bg-white border border-slate-100 p-4 rounded-2xl">
-                                <p class="text-[10px] font-black text-teal-600 uppercase mb-1">Orthopedics</p>
-                                <p class="font-bold text-slate-800">Dr. Nagaraj Bhat</p>
-                            </div>
-                            <div class="bg-white border border-slate-100 p-4 rounded-2xl">
-                                <p class="text-[10px] font-black text-teal-600 uppercase mb-1">Neurology</p>
-                                <p class="font-bold text-slate-800">Dr. Mohammed Shameem K.</p>
-                            </div>
-                            <div class="bg-white border border-slate-100 p-4 rounded-2xl">
-                                <p class="text-[10px] font-black text-teal-600 uppercase mb-1">Pediatrics</p>
-                                <p class="font-bold text-slate-800">Dr. Mohammed Musthafa</p>
-                            </div>
-                            <div class="bg-white border border-slate-100 p-4 rounded-2xl">
-                                <p class="text-[10px] font-black text-teal-600 uppercase mb-1">Nephrology</p>
-                                <p class="font-bold text-slate-800">Dr. Abhaya Narayanan</p>
-                            </div>
-                            <div class="bg-white border border-slate-100 p-4 rounded-2xl">
-                                <p class="text-[10px] font-black text-teal-600 uppercase mb-1">ENT Surgeon</p>
-                                <p class="font-bold text-slate-800">Dr. Adarsh Herale</p>
-                            </div>
+                        <h4 class="text-lg font-bold text-slate-900">Dr. Jayadev Kangila</h4>
+                        <p class="text-xs font-bold text-slate-400 mb-4 uppercase tracking-tighter">MBBS, MD - Medical Director</p>
+                        <div class="space-y-2 border-t border-slate-50 pt-4">
+                            <p class="text-xs font-bold text-slate-600 flex items-center gap-2">
+                                <i class="far fa-clock text-cyan-500"></i> Mon-Sat: 09:30 AM - 01:00 PM
+                            </p>
+                            <p class="text-xs font-bold text-slate-600 flex items-center gap-2 pl-6">
+                                04:30 PM - 07:30 PM
+                            </p>
                         </div>
                     </div>
-                </section>
 
-                <!-- DEPARTMENTS -->
-                <section id="departments" class="mb-16">
-                    <h2 class="text-xl font-black text-slate-900 mb-6">Departments & Services</h2>
-                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
-                        <div class="bg-white p-4 rounded-2xl text-center border border-slate-100 shadow-sm">
-                            <i class="fas fa-kidneys text-teal-500 mb-2 block"></i>
-                            <p class="text-xs font-bold text-slate-700">Dialysis Unit</p>
+                    <!-- Dr. M A Mohammed Afsal -->
+                    <div class="doctor-card bg-white p-6 rounded-[2rem]">
+                        <div class="flex items-start justify-between mb-4">
+                            <div class="w-14 h-14 bg-slate-100 rounded-2xl flex items-center justify-center text-slate-700 text-xl font-bold">MA</div>
+                            <span class="bg-slate-200 text-slate-800 text-[9px] font-black px-2 py-1 rounded">GENERAL SURGERY</span>
                         </div>
-                        <div class="bg-white p-4 rounded-2xl text-center border border-slate-100 shadow-sm">
-                            <i class="fas fa-eye text-teal-500 mb-2 block"></i>
-                            <p class="text-xs font-bold text-slate-700">Ophthalmology</p>
-                        </div>
-                        <div class="bg-white p-4 rounded-2xl text-center border border-slate-100 shadow-sm">
-                            <i class="fas fa-brain text-teal-500 mb-2 block"></i>
-                            <p class="text-xs font-bold text-slate-700">Neurology</p>
-                        </div>
-                        <div class="bg-white p-4 rounded-2xl text-center border border-slate-100 shadow-sm">
-                            <i class="fas fa-tooth text-teal-500 mb-2 block"></i>
-                            <p class="text-xs font-bold text-slate-700">Dentistry</p>
-                        </div>
-                        <div class="bg-white p-4 rounded-2xl text-center border border-slate-100 shadow-sm">
-                            <i class="fas fa-stomach text-teal-500 mb-2 block"></i>
-                            <p class="text-xs font-bold text-slate-700">Gastroenterology</p>
-                        </div>
-                        <div class="bg-white p-4 rounded-2xl text-center border border-slate-100 shadow-sm">
-                            <i class="fas fa-microscope text-teal-500 mb-2 block"></i>
-                            <p class="text-xs font-bold text-slate-700">Radiology</p>
+                        <h4 class="text-lg font-bold text-slate-900">Dr. M A Mohammed Afsal</h4>
+                        <p class="text-xs font-bold text-slate-400 mb-4 uppercase tracking-tighter">MBBS, MS - General Surgeon & MD</p>
+                        <div class="space-y-2 border-t border-slate-50 pt-4">
+                            <p class="text-xs font-bold text-slate-600 flex items-center gap-2">
+                                <i class="far fa-clock text-cyan-500"></i> Mon-Sat: 10:00 AM - 01:00 PM
+                            </p>
+                            <p class="text-xs font-bold text-slate-600 flex items-center gap-2 pl-6">
+                                Emergency Consults 24/7 Available
+                            </p>
                         </div>
                     </div>
-                </section>
+
+                    <!-- Dr. Zuhara Beefathima Hameed -->
+                    <div class="doctor-card bg-white p-6 rounded-[2rem]">
+                        <div class="flex items-start justify-between mb-4">
+                            <div class="w-14 h-14 bg-rose-50 rounded-2xl flex items-center justify-center text-rose-600 text-xl font-bold">ZB</div>
+                            <span class="bg-rose-100 text-rose-700 text-[9px] font-black px-2 py-1 rounded">GYNECOLOGY</span>
+                        </div>
+                        <h4 class="text-lg font-bold text-slate-900">Dr. Zuhara Beefathima Hameed</h4>
+                        <p class="text-xs font-bold text-slate-400 mb-4 uppercase tracking-tighter">MBBS, DGO - Chairman, OBGYN</p>
+                        <div class="space-y-2 border-t border-slate-50 pt-4">
+                            <p class="text-xs font-bold text-slate-600 flex items-center gap-2">
+                                <i class="far fa-clock text-rose-500"></i> Mon-Sat: 09:30 AM - 01:30 PM
+                            </p>
+                            <p class="text-xs font-bold text-slate-600 flex items-center gap-2 pl-6">
+                                04:30 PM - 06:30 PM
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Dr. Nagaraj Bhat -->
+                    <div class="doctor-card bg-white p-6 rounded-[2rem]">
+                        <div class="flex items-start justify-between mb-4">
+                            <div class="w-14 h-14 bg-blue-50 rounded-2xl flex items-center justify-center text-blue-600 text-xl font-bold">NB</div>
+                            <span class="bg-blue-100 text-blue-700 text-[9px] font-black px-2 py-1 rounded">ORTHOPAEDICS</span>
+                        </div>
+                        <h4 class="text-lg font-bold text-slate-900">Dr. Nagaraj Bhat</h4>
+                        <p class="text-xs font-bold text-slate-400 mb-4 uppercase tracking-tighter">MBBS, MS Ortho - Orthopaedic Surgeon</p>
+                        <div class="space-y-2 border-t border-slate-50 pt-4">
+                            <p class="text-xs font-bold text-slate-600 flex items-center gap-2">
+                                <i class="far fa-clock text-blue-500"></i> Mon-Sat: 10:00 AM - 01:00 PM
+                            </p>
+                            <p class="text-xs font-bold text-slate-600 flex items-center gap-2 pl-6">
+                                04:00 PM - 06:00 PM
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Dr. Mohammed Shameem Kattathadka -->
+                    <div class="doctor-card bg-white p-6 rounded-[2rem]">
+                        <div class="flex items-start justify-between mb-4">
+                            <div class="w-14 h-14 bg-indigo-50 rounded-2xl flex items-center justify-center text-indigo-600 text-xl font-bold">MS</div>
+                            <span class="bg-indigo-100 text-indigo-700 text-[9px] font-black px-2 py-1 rounded">NEUROLOGY</span>
+                        </div>
+                        <h4 class="text-lg font-bold text-slate-900">Dr. M. Shameem Kattathadka</h4>
+                        <p class="text-xs font-bold text-slate-400 mb-4 uppercase tracking-tighter">MBBS, MD, DM Neurology</p>
+                        <div class="space-y-2 border-t border-slate-50 pt-4">
+                            <p class="text-xs font-bold text-slate-600 flex items-center gap-2">
+                                <i class="far fa-clock text-indigo-500"></i> Mon-Sat: 10:30 AM - 01:30 PM
+                            </p>
+                            <p class="text-xs font-bold text-slate-600 flex items-center gap-2 pl-6">
+                                Carewell Primary Stroke Response Lead
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Dr. Adarsh Herale -->
+                    <div class="doctor-card bg-white p-6 rounded-[2rem]">
+                        <div class="flex items-start justify-between mb-4">
+                            <div class="w-14 h-14 bg-amber-50 rounded-2xl flex items-center justify-center text-amber-600 text-xl font-bold">AH</div>
+                            <span class="bg-amber-100 text-amber-700 text-[9px] font-black px-2 py-1 rounded">ENT SURGEON</span>
+                        </div>
+                        <h4 class="text-lg font-bold text-slate-900">Dr. Adarsh Herale</h4>
+                        <p class="text-xs font-bold text-slate-400 mb-4 uppercase tracking-tighter">MBBS, MS ENT</p>
+                        <div class="space-y-2 border-t border-slate-50 pt-4">
+                            <p class="text-xs font-bold text-slate-600 flex items-center gap-2">
+                                <i class="far fa-clock text-amber-500"></i> Mon-Sat: 11:00 AM - 01:30 PM
+                            </p>
+                            <p class="text-xs font-bold text-slate-600 flex items-center gap-2 pl-6">
+                                04:30 PM - 07:00 PM
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Quick Info Alert -->
+                <div class="mt-8 bg-blue-50 border-l-4 border-blue-500 p-4 rounded-r-2xl">
+                    <p class="text-sm text-blue-800 font-medium">
+                        <i class="fas fa-info-circle mr-2"></i> Carewell features Kasaragod's first Neuro Physiology Lab. For appointments, call 04994-230180.
+                    </p>
+                </div>
             </div>
 
-            <!-- SIDEBAR -->
+            <!-- SIDEBAR DETAILS -->
             <div class="lg:w-1/3">
                 <div class="sticky top-24 space-y-6">
-                    <!-- Location -->
+                    
+                    <!-- Location Card -->
                     <div class="bg-slate-900 text-white p-8 rounded-[2.5rem] shadow-xl">
-                        <h3 class="text-xl font-black mb-6">Find Us</h3>
+                        <h3 class="text-xl font-black mb-4">Location Map</h3>
+                        <p class="text-slate-400 text-sm mb-6 leading-relaxed">Carewell Hospital & Research Centre Pvt Ltd, Nullipady, NH-66, Kasaragod, Kerala - 671121</p>
+                        
                         <div class="space-y-4 mb-8">
-                            <div class="flex items-start gap-4">
-                                <i class="fas fa-map-marker-alt text-teal-400 mt-1"></i>
-                                <p class="text-sm text-slate-300">NH-66, Nullipady, Kasaragod, Kerala - 671121</p>
+                            <div class="flex items-center gap-4">
+                                <div class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center"><i class="fas fa-train"></i></div>
+                                <div><p class="text-xs font-bold">Railway Station</p><p class="text-xs text-slate-400">2.5 km (Kasaragod Station)</p></div>
                             </div>
-                            <div class="flex items-start gap-4">
-                                <i class="fas fa-phone text-teal-400 mt-1"></i>
-                                <p class="text-sm text-slate-300">04994 222 324 <br> 04994 230 180</p>
+                            <div class="flex items-center gap-4">
+                                <div class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center"><i class="fas fa-bus"></i></div>
+                                <div><p class="text-xs font-bold">Bus Terminal</p><p class="text-xs text-slate-400">1.8 km (Kasaragod Town Bus Stand)</p></div>
                             </div>
                         </div>
-                        <a href="https://www.google.com/maps/dir/?api=1&destination=12.5074,74.9965" target="_blank" class="block w-full bg-teal-500 text-white text-center font-black py-4 rounded-2xl hover:bg-teal-600 transition shadow-lg shadow-teal-500/20 uppercase text-xs tracking-widest">
-                            Get Directions
+
+                        <a href="https://www.google.com/maps/dir/?api=1&destination=Carewell+Hospital+Nullipady+Kasaragod" target="_blank" class="block w-full bg-cyan-500 hover:bg-cyan-600 text-center text-white font-black py-4 rounded-2xl transition shadow-lg shadow-cyan-500/20">
+                            GET DIRECTIONS
                         </a>
                     </div>
 
-                    <!-- Facilities -->
+                    <!-- Quick Contact -->
                     <div class="bg-white p-8 rounded-[2.5rem] border border-slate-100">
-                        <h3 class="font-black text-slate-900 mb-6">Facilities</h3>
+                        <h3 class="font-black text-slate-900 mb-6">Connect</h3>
                         <div class="space-y-4">
-                            <div class="flex items-center gap-3">
-                                <i class="fas fa-check-circle text-teal-500"></i>
-                                <span class="text-sm font-bold text-slate-600">24x7 Ambulance</span>
-                            </div>
-                            <div class="flex items-center gap-3">
-                                <i class="fas fa-check-circle text-teal-500"></i>
-                                <span class="text-sm font-bold text-slate-600">Modern Dialysis Unit</span>
-                            </div>
-                            <div class="flex items-center gap-3">
-                                <i class="fas fa-check-circle text-teal-500"></i>
-                                <span class="text-sm font-bold text-slate-600">EEG & Neonatal Care</span>
-                            </div>
-                            <div class="flex items-center gap-3">
-                                <i class="fas fa-check-circle text-teal-500"></i>
-                                <span class="text-sm font-bold text-slate-600">Wheelchair Accessible</span>
-                            </div>
+                            <a href="tel:04994230180" class="flex items-center justify-between p-4 bg-slate-50 rounded-2xl group">
+                                <span class="font-bold text-slate-700">Reception Desk</span>
+                                <i class="fas fa-phone-alt text-slate-300 group-hover:text-cyan-600 transition"></i>
+                            </a>
+                            <a href="mailto:carewellhospital@gmail.com" class="flex items-center justify-between p-4 bg-slate-50 rounded-2xl group">
+                                <span class="font-bold text-slate-700">Email Admin</span>
+                                <i class="fas fa-envelope text-slate-300 group-hover:text-cyan-600 transition"></i>
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
     </main>
 
+    <!-- FOOTER -->
     <footer class="bg-white border-t border-slate-100 py-12">
         <div class="max-w-7xl mx-auto px-4 text-center">
-            <p class="text-[10px] font-black text-slate-300 uppercase tracking-widest mb-4">A Unit of Carewell Hospital & Research Centre Pvt Ltd</p>
-            <p class="text-slate-400 text-xs">Serving Kasaragod with expert medical care for over 30 years.</p>
+            <p class="text-[10px] font-black text-slate-300 uppercase tracking-[0.2em] mb-4">Official MediLink Directory</p>
+            <p class="text-slate-400 text-sm">© 2026 MediLink Kerala. Data sourced from Carewell Hospital & Research Centre portals.</p>
         </div>
     </footer>
 
     <script>
-        // COORDINATES FOR NULLIPADY, KASARAGOD (CAREWELL LOCATION)
-        const hospitalCoords = { lat: 12.5074, lon: 74.9965 };
+        // GEOLOCATION CALCULATOR
+        const hospitalCoords = { lat: 12.5113, lon: 74.9986 }; // Coordinates for Nullipady, Kasaragod
 
         function calculateDistance(lat1, lon1, lat2, lon2) {
             const R = 6371; // km
@@ -281,114 +306,30 @@
                       Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
                       Math.sin(dLon / 2) * Math.sin(dLon / 2);
             const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-            return (R * c).toFixed(2);
+            return (R * c).toFixed(1);
         }
 
-        function trackUser() {
+        function initLocation() {
             if (navigator.geolocation) {
-                navigator.geolocation.watchPosition((position) => {
+                navigator.geolocation.getCurrentPosition((position) => {
                     const dist = calculateDistance(
                         position.coords.latitude, 
                         position.coords.longitude, 
                         hospitalCoords.lat, 
                         hospitalCoords.lon
                     );
-                    document.getElementById('dist-display').innerHTML = 
-                        `<i class="fas fa-location-arrow"></i> ${dist} km from your current location`;
-                }, (error) => {
-                    document.getElementById('dist-display').innerHTML = 
-                        `<i class="fas fa-map-marker-alt"></i> Location access required`;
-                }, {
-                    enableHighAccuracy: true
+                    document.getElementById('distance-badge').innerHTML = 
+                        `<i class="fas fa-route text-cyan-300"></i> ${dist} km from your location`;
+                }, () => {
+                    document.getElementById('distance-badge').innerHTML = 
+                        `<i class="fas fa-map-marker-alt text-cyan-300"></i> Nullipady, Kasaragod`;
                 });
             }
         }
-        window.onload = trackUser;
+
+        window.onload = initLocation;
     </script>
 </body>
 </html>
 
-                            <div>
-                                <p class="text-sm font-bold text-slate-800">Dr. Zuhara Beefathima Hameed</p>
-                                <p class="text-[10px] text-slate-500">Chairman / OBG Specialist</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Internal Medicine & Neuro -->
-                <div class="bg-white p-5 rounded-3xl border border-slate-100">
-                    <h4 class="text-xs font-black text-sky-600 uppercase tracking-widest mb-4">Medicine & Neurology</h4>
-                    <div class="space-y-4">
-                        <div class="flex items-center gap-3">
-                            <div class="w-10 h-10 bg-slate-50 rounded-full flex items-center justify-center text-slate-400"><i class="fas fa-user-md"></i></div>
-                            <div>
-                                <p class="text-sm font-bold text-slate-800">Dr. Mohammed Shameem Kattathadka</p>
-                                <p class="text-[10px] text-slate-500">Neurology</p>
-                            </div>
-                        </div>
-                        <div class="flex items-center gap-3">
-                            <div class="w-10 h-10 bg-slate-50 rounded-full flex items-center justify-center text-slate-400"><i class="fas fa-user-md"></i></div>
-                            <div>
-                                <p class="text-sm font-bold text-slate-800">Dr. Jayadev Kangila</p>
-                                <p class="text-[10px] text-slate-500">General Medicine</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Toggle for more -->
-                <button onclick="this.nextElementSibling.classList.toggle('hidden')" class="w-full py-2 text-xs font-bold text-slate-400 bg-slate-100 rounded-xl">VIEW ALL SPECIALISTS (10+ More)</button>
-                <div class="hidden space-y-2 mt-2">
-                    <div class="p-3 bg-white rounded-xl border border-slate-100 text-sm"><strong>Dr. Nagaraj Bhat</strong> - Orthopaedics</div>
-                    <div class="p-3 bg-white rounded-xl border border-slate-100 text-sm"><strong>Dr. Adarsh Herale</strong> - ENT Surgeon</div>
-                    <div class="p-3 bg-white rounded-xl border border-slate-100 text-sm"><strong>Dr. Mohammed Musthafa</strong> - Pediatrics</div>
-                    <div class="p-3 bg-white rounded-xl border border-slate-100 text-sm"><strong>Dr. Abhaya Narayanan</strong> - Nephrology</div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Facilities -->
-        <section class="mb-10">
-            <h3 class="text-slate-800 font-extrabold text-lg mb-4">Facilities</h3>
-            <div class="grid grid-cols-2 gap-2">
-                <div class="flex items-center gap-2 p-3 bg-emerald-50 text-emerald-700 rounded-xl text-xs font-bold">
-                    <i class="fas fa-check-circle"></i> Dialysis Unit
-                </div>
-                <div class="flex items-center gap-2 p-3 bg-emerald-50 text-emerald-700 rounded-xl text-xs font-bold">
-                    <i class="fas fa-check-circle"></i> Stroke Response
-                </div>
-                <div class="flex items-center gap-2 p-3 bg-emerald-50 text-emerald-700 rounded-xl text-xs font-bold">
-                    <i class="fas fa-check-circle"></i> 24/7 Pharmacy
-                </div>
-                <div class="flex items-center gap-2 p-3 bg-emerald-50 text-emerald-700 rounded-xl text-xs font-bold">
-                    <i class="fas fa-check-circle"></i> Advanced CT/MRI
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact detail footer -->
-        <div class="bg-slate-900 rounded-[2.5rem] p-8 text-white">
-            <h4 class="font-bold text-xl mb-6">Contact Details</h4>
-            <div class="space-y-4 mb-8">
-                <div class="flex gap-4">
-                    <i class="fas fa-envelope text-sky-400 mt-1"></i>
-                    <p class="text-sm text-slate-400">carewelhospital@gmail.com</p>
-                </div>
-                <div class="flex gap-4">
-                    <i class="fas fa-phone-alt text-sky-400 mt-1"></i>
-                    <div>
-                        <p class="text-sm text-slate-200">+91 4994 222324</p>
-                        <p class="text-sm text-slate-200">+91 8848 642654</p>
-                    </div>
-                </div>
-            </div>
-            <a href="https://www.google.com/maps/dir/?api=1&destination=Carewell+Hospital+Kasaragod" class="block w-full bg-sky-500 py-4 rounded-2xl text-center font-black text-sm uppercase tracking-widest shadow-2xl">
-                Get Directions
-            </a>
-        </div>
-    </main>
-
-</body>
-</html>
-
+```
